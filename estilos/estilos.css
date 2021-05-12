@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #d4dbe2;
+  background-color: #dce8f2;
   font-size: 13px;
 }
 
@@ -230,6 +230,7 @@ main .seccion-proximos-dias .contenedor-clima-proximo .texto-clima-proximo {
 
 main .seccion-proximos-dias .contenedor-clima-proximo .texto-clima-proximo p {
   display: block;
+  padding-left: 10px;
 }
 
 main .seccion-proximos-dias .contenedor-clima-proximo .texto-clima-proximo span {
@@ -246,7 +247,7 @@ main .seccion-proximos-dias .contenedor-clima-proximo .clima-proximo {
   text-align: center;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   color: black;
-  background-color: #d4dbe2;
+  background-color: #dce8f2;
   min-height: 78px;
   font-size: 0.8rem;
   font-weight: 600;
@@ -340,7 +341,7 @@ main .seccion-top-reviews .reviews-icono .contenedor-iconos-reviews {
 }
 
 main .seccion-top-reviews .reviews-icono .contenedor-iconos-reviews span {
-  background: #d4dbe2;
+  background: #dce8f2;
   width: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -536,7 +537,7 @@ main .seccion-otros-paises .clima-otro-pais .seccion-bottom p {
 }
 
 main .seccion-otros-paises .background-ico {
-  background-color: #d4dbe2;
+  background-color: #dce8f2;
   width: 30%;
   border-radius: 15px;
 }
@@ -624,6 +625,23 @@ main .seccion-otros-paises .seccion-location button:hover {
   }
   main .seccion-otros-paises .seccion-location {
     background-position: center;
+  }
+  header {
+    overflow: auto;
+    padding: 2% 3%;
+  }
+  header .icono-cabecera {
+    left: -17px;
+    position: fixed;
+    top: 140px;
+    z-index: 119;
+    background: #d4488f;
+    width: 100px;
+    height: 81px;
+    text-align: center;
+    padding-top: 26px;
+    padding-left: 6px;
+    border-radius: 0 0 25px;
   }
 }
 /*# sourceMappingURL=estilos.css.map */

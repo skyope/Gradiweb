@@ -5,7 +5,7 @@
 //Sección de colores
 $color-fuente-base: black;
 $color-fuente-secundario: #878787;
-$color-Primario: #d4dbe2;
+$color-Primario: #dce8f2;
 $color-Secundario: #7c67f4;
 $color-Terciario: #dee7f5;
 $color-gris: #d4d4d4;
@@ -192,6 +192,7 @@ main {
         width: 40%;
         p {
           display: block;
+          padding-left: 10px;
         }
         span {
           color: #e0e0e0;
@@ -481,6 +482,23 @@ main {
       .seccion-location {
         background-position: center;
       }
+    }
+  }
+  header {
+    overflow: auto;
+    padding: 2% 3%;
+    .icono-cabecera {
+      left: -17px;
+      position: fixed;
+      top: 140px;
+      z-index: 119;
+      background: #d4488f;
+      width: 100px;
+      height: 81px;
+      text-align: center;
+      padding-top: 26px;
+      padding-left: 6px;
+      border-radius: 0 0 25px;
     }
   }
 }

@@ -3,16 +3,13 @@ const appId= 'd9e227ad79ad2f4b6cfc430bbfced03c';
 
 const urlApi= `http://api.openweathermap.org/data/2.5/forecast?q=bogota&cnt=3&appid=${appId}`
 const urlApiFrench= `https://api.openweathermap.org/data/2.5/weather?q=paris,france&appid=${appId}`
-const urlApibogota= `https://api.openweathermap.org/data/2.5/weather?q=bogota,colombia&appid=${appId}`
 const urlImagenes = "http://openweathermap.org/img/wn/"
-// const urlImagenes =http://openweathermap.org/img/wn/${icon}@2x.png
 
 
 document.addEventListener('DOMContentLoaded', cargaDocumento)
 
 function cargaDocumento(){
     realizarPeticion(urlApi)
-    realizarPeticionBog(urlApibogota)
     realizarPeticionFra(urlApiFrench)
 }
 
@@ -32,25 +29,18 @@ const peticion = (url) =>{
     })
 }
 
-//Desencadenamiento
+//Peticion de proximos dias y de Bogota 
 const realizarPeticion  = async url =>{
     try {
         const data = await peticion(url)
         mostrarDiasSiguientes(data.list)
-    } catch (error) {
-        console.log(error)
-    }
-}
-//Peticion Bogota
-const realizarPeticionBog  = async url =>{
-    try {
-        const data = await peticion(url)
         mostrarTemperaturaBogota(data)
-        mostrarIcono(data)
+        mostrarIcono(data.list[0])
     } catch (error) {
         console.log(error)
     }
 }
+
 //Peticion francia
 const realizarPeticionFra  = async url =>{
     try {
@@ -61,16 +51,15 @@ const realizarPeticionFra  = async url =>{
     }
 }
 
-
 //Seccion de pintar HTML
 function mostrarTemperaturaBogota(datos){
-    console.log(datos)
-    const { main :{temp},name} = datos
-    console.log(temp)
+    
+    let temp = datos.list[0].main.temp;
+
     let NombreCiudad = document.querySelector("#NombreCiudad");
     const climaActual = document.querySelector("#climaActual");
 
-    NombreCiudad.textContent= name;
+    NombreCiudad.textContent = datos.city.name;
     let centigrados =  Centigrados(temp)
     console.log(centigrados)
 
@@ -80,6 +69,7 @@ function mostrarTemperaturaBogota(datos){
     climaActual.appendChild(clima);
 }
 
+//mostrar Icono lateral
 function mostrarIcono(datos){
         const { weather} = datos
         const urlImage = `${urlImagenes}${weather[0].icon}@2x.png`;
@@ -89,6 +79,7 @@ function mostrarIcono(datos){
         climaIcono.appendChild(img); 
 }
 
+//mostrar los 3 dias siguientes
 function mostrarDiasSiguientes(data){
     let resultadoProximosDias = document.querySelector("#resultadoProximosDias");
     data.forEach(clima => {
@@ -110,6 +101,8 @@ function mostrarDiasSiguientes(data){
         resultadoProximosDias.appendChild(div)
     });
 }
+
+//mostrar los la informacion de Francia
 function mostrarFrancia(data){
     let resultadoInternacional = document.querySelector("#resultadoConsultaInternacional");
     let climaIcoResultados = document.querySelector("#climaIcoResultados");
@@ -142,6 +135,7 @@ function mostrarFrancia(data){
     resultadoInternacional.appendChild(div);
 }
 
+//Transforma la data de grados
 function Centigrados(grados){
     return parseInt(grados - 273.15)
 }
