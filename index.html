@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Tecnica GradiWeb - Nicolás Uribe</title>
+    <link rel="stylesheet" href="./estilos/estilos.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+     <!-- Inicio Header -->
+    <header>
+        <a href="https://www.gradiweb.com/" class="icono-cabecera" target="_blank">
+            <img src="./img/logo.png" width="55" alt="Logo Gradiweb" title="Ir a la pagina de GradiWeb">
+         </a>
+    </header>
+     <!-- Fin Header -->
+    <main>
+        <!-- Sección contenido principal -->
+        <section class="seccion-principal-banner">
+            <div class="contenedor-banner">
+                <img src="./img/bogota.png" alt="Imagen con relación al ciudad" title="imagen con relación a la ciudad">
+                <!-- <img src="./img/bogota.png" id="bannerClimaBogota" alt="Imagen con relacion al clima" title="imagen con relacion al clima"> -->
+                <div class="texto-contenido">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p id="NombreCiudad"></p>
+                </div>
+            </div>
+        </section>
+        <!-- Sección de botones laterales -->
+        <section class="informacion-clima">
+                <div id="climaIcono"></div>
+                <div id="climaActual" class="clima-actual"></div>
+        </section>
+        <!-- Sección proximos tres dias -->
+        <section class="seccion-proximos-dias">
+            <h1><b>3 Days</b> Forecast</h1>
+            <div id="resultadoProximosDias" class="resultado-Proximo-dias"></div>
+        </section>
+        <!-- Sección Lugar para visitar -->
+        <section class="seccion-lugar-visitar">
+            <h2><b>Place to</b> visit</h2>
+            <div class="contenedor-clima-proximo">
+                 <!-- <img class="imagen-proxima-visita" alt="imagen de singapour" title="imagen de singapour">  -->
+                 <div class="texto-contenido">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Arab Street Singapour</p>
+                </div>
+            </div>
+        </section>
+        <!-- Sección top Reviews -->
+        <section class="seccion-top-reviews">
+            <div class="reviews-icono">
+                <h3>+ Top reviews</h3>
+                <div class="contenedor-iconos-reviews">
+                     <img src="./img/caraPersona.png" width="30" alt="imagen persona"> 
+                     <img src="./img/caraPersona.png" width="30" alt="imagen persona"> 
+                     <img src="./img/caraPersona.png" width="30" alt="imagen persona"> 
+                     <span class="top-reviews-boton">6+</span>
+                </div>
+            </div>
+            <div class="contenedor-imagen-uno">
+                <img src="./img/artSingapour.jpg" alt="Imagen con relacion al clima" title="imagen con relacion al clima">
+                <div class="texto-contenido">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Arab Street Singapour</p>
+                </div>
+            </div>
+            <div class="contenedor-imagen-dos">
+                <img src="./img/spain.jpg" alt="Imagen con relacion al clima" title="imagen con relacion al clima">
+                <div class="texto-contenido">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Arab Street Singapour</p>
+                </div>
+                <button>+</button>
+            </div>
+        </section>
+        <!-- Sección clima paises -->
+        <section class="seccion-otros-paises">
+            <div id="resultadoConsultaInternacional"></div>
+            <div class="clima-otro-pais">
+            <div class="seccion-img-paises">
+                <div class="background-ico">
+                    <img src="./img/icoClima2.png" id="climaIcoResultados" alt="Imagen con relacion al clima" title="imagen con relacion al clima">
+                </div>
+                <div class="datos-clima-otro-pais">
+                    <p class="br-1"><span>5°</span></p>
+                    <div class="titulo-otro-pais">
+                        <p> Lyon</p>
+                        <p> Paris</p>
+                    </div>
+                </div>
+                </div>
+                <div class="seccion-bottom">
+                    <p>Humidity 87%</p>
+                    <p>Easth</p>
+                    <p>2.57km/h</p>
+                </div>
+            </div>
+            <div class="seccion-location">
+                <button>Add Locations</button>
+            </div>
+        </section>
+    </main>
+    <script src="./script/script.js"></script>
+</body>
+</html>
