@@ -1,0 +1,486 @@
+//TODO
+//AJUSTAR COLORES DE LOS PROXIMOS 3 DIAS
+//Revisar los h1 ya que tengo repetidos
+
+//Sección de colores
+$color-fuente-base: black;
+$color-fuente-secundario: #878787;
+$color-Primario: #d4dbe2;
+$color-Secundario: #7c67f4;
+$color-Terciario: #dee7f5;
+$color-gris: #d4d4d4;
+
+//Sección de fuentes
+$font-texto: "Montserrat", Helvetica, Arial, sans-serif;
+$font-titulo: "Lato", Helvetica, Arial, sans-serif;
+
+//Seccion de mixing
+@mixin contenedor-imagenes {
+  width: 100%;
+  border-radius: 35px;
+  overflow: hidden;
+}
+@mixin texto-en-imagenes {
+  position: absolute;
+  top: 30px;
+  display: inline-flex;
+  left: 30px;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-Primario;
+  font-size: 13px;
+}
+//Seccion del Header
+header {
+  overflow: auto;
+  padding: 2% 3%;
+  .icono-cabecera {
+    display: block;
+    float: right;
+  }
+}
+p {
+  font-family: $font-texto;
+  color: $color-fuente-base;
+  font-size: 1rem;
+}
+h1,
+h2 {
+  font-family: $font-texto;
+  color: $color-fuente-base;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+h3 {
+  font-family: $font-texto;
+  color: $color-gris;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+//Seccion del conenido principal
+main {
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 35px;
+  width: 90%;
+  padding: 4% 4% 0 4%;
+  min-height: 800px;
+  margin: 0 auto;
+  position: relative;
+  -webkit-box-shadow: 5px 6px 20px 2px rgba(0, 0, 0, 0.11);
+  box-shadow: 5px 6px 20px 2px rgba(0, 0, 0, 0.11);
+  .seccion-principal-banner {
+    position: relative;
+    .contenedor-banner {
+      display: flex;
+      // min-height: 360px;
+      margin: 0 auto;
+      @include contenedor-imagenes;
+      margin-top: 0;
+      img {
+        margin: 0 auto;
+        height: fit-content;
+        width: 100%;
+      }
+      .texto-contenido {
+        padding: 35px 0 0 35px;
+        @include texto-en-imagenes;
+        color: $color-Secundario;
+        font-size: 1.5rem;
+
+        p {
+          color: $color-Secundario;
+          font-weight: 600;
+          padding-left: 10px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .informacion-clima > div {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    left: 0;
+    .clima-actual {
+      color: white;
+      font-size: 2rem;
+      padding-top: 15px;
+    }
+    &:first-child {
+      background-color: #352585;
+      top: 145px;
+      border-radius: 0 25px 25px 15px;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &::before {
+        content: "";
+        z-index: 111;
+        position: absolute;
+        top: -8px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-right: 8px solid transparent;
+        border-top: 8px solid transparent;
+        border-left: 8px solid #352585;
+        border-bottom: 8px solid transparent;
+      }
+    }
+    &:last-child {
+      top: 215px;
+      border-radius: 0 0 25px 0;
+      background-color: $color-Secundario;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      box-sizing: border-box;
+      font-family: $font-titulo;
+      -webkit-box-shadow: 8px 11px 29px 5px rgba(0, 0, 0, 0.4);
+      box-shadow: 8px 11px 29px 5px rgba(0, 0, 0, 0.4);
+      &::after {
+        content: "";
+        z-index: 111;
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-right: 8px solid transparent;
+        border-top: 8px solid transparent;
+        border-left: 8px solid $color-Secundario;
+        border-bottom: 8px solid transparent;
+      }
+    }
+  }
+  .seccion-proximos-dias {
+    width: 20%;
+    display: inline-flex;
+    flex-direction: column;
+    .resultado-Proximo-dias {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+    }
+    .contenedor-clima-proximo {
+      border: 1px solid #e0e0e0;
+      border-radius: 25px;
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 10px;
+      height: 75px;
+      img {
+        width: 20%;
+        display: inline-block;
+      }
+      .texto-clima-proximo {
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 40%;
+        p {
+          display: block;
+        }
+        span {
+          color: #e0e0e0;
+          font-size: 0.7rem;
+        }
+      }
+      .clima-proximo {
+        width: 40%;
+        border-radius: 25px;
+        display: inline-flex;
+        text-align: center;
+        font-family: $font-titulo;
+        color: $color-fuente-base;
+        background-color: $color-Primario;
+        min-height: 78px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        justify-content: center;
+        align-items: center;
+      }
+      &:first-child {
+        .clima-proximo {
+          background-color: $color-Secundario;
+          color: white;
+        }
+      }
+    }
+  }
+  .seccion-lugar-visitar {
+    display: inline-flex;
+    flex-direction: column;
+    width: 23%;
+    margin: 0 2% 0 3%;
+    .contenedor-clima-proximo {
+      @include contenedor-imagenes;
+      position: relative;
+      margin: 0 auto;
+      margin-top: 50px;
+      height: 250px;
+
+      -webkit-box-shadow: 5px 30px 34px 23px rgba(0, 0, 0, 0.07);
+      box-shadow: 5px 30px 34px 23px rgba(0, 0, 0, 0.07);
+      background-image: url("../img/singapour.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .texto-contenido {
+        position: relative;
+        @include texto-en-imagenes;
+        p {
+          margin-left: 10px;
+          color: white;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  .seccion-top-reviews {
+    width: 20%;
+    display: inline-flex;
+    flex-direction: column;
+    .reviews-icono {
+      display: inline-flex;
+      align-items: center;
+      h3 {
+        margin: 0px;
+      }
+      .contenedor-iconos-reviews {
+        margin: 0 5px;
+        display: flex;
+        span {
+          background: $color-Primario;
+          width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          border-radius: 3px;
+          font-weight: 600;
+          cursor: pointer;
+        }
+        img {
+          margin-right: 3px;
+        }
+      }
+    }
+    .contenedor-imagen-uno {
+      @include contenedor-imagenes;
+      margin-top: 50px;
+      border-radius: 25px;
+      height: 70px;
+      position: relative;
+      img {
+        width: 100%;
+        transform: translateY(-60px);
+      }
+      .texto-contenido {
+        @include texto-en-imagenes;
+        p {
+          color: white;
+          font-size: 0.8rem;
+          margin-left: 15px;
+        }
+      }
+    }
+    .contenedor-imagen-dos {
+      @include contenedor-imagenes;
+      position: relative;
+      margin-top: 15px;
+      height: 160px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      button {
+        cursor: pointer;
+        width: 70px;
+        height: 100%;
+        border-radius: 35px;
+        color: white;
+        background-color: $color-Secundario;
+        position: absolute;
+        right: 0;
+        border: none;
+        transition: background-color 0.3s linear 0.1s;
+        &:hover {
+          background-color: #352585;
+        }
+      }
+      .texto-contenido {
+        @include texto-en-imagenes;
+        p {
+          color: white;
+          font-size: 0.8rem;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+  .seccion-otros-paises {
+    width: 25%;
+    margin-left: 2%;
+    display: inline-flex;
+    flex-direction: column;
+    border-radius: 25px;
+    transform: translateY(-110px);
+    .clima-otro-pais {
+      background-color: white;
+      display: block;
+      border-radius: 25px;
+      -webkit-box-shadow: 5px 5px 26px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 5px 5px 26px 0px rgba(0, 0, 0, 0.25);
+      margin-bottom: 20px;
+      img {
+        width: 100%;
+      }
+      .seccion-img-paises {
+        display: flex;
+        align-items: center;
+        p {
+          font-size: 0.9rem;
+          color: $color-fuente-base;
+          font-weight: 600;
+          margin-bottom: 0;
+        }
+        span {
+          font-size: 1.7rem;
+        }
+        .datos-clima-otro-pais {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 70%;
+          .titulo-otro-pais {
+            display: block;
+            p {
+              padding: 0;
+              &:last-child {
+                font-size: 0.7rem;
+              }
+            }
+          }
+          .br-1 {
+            border-right: 1px solid #e8e2e0;
+            padding-right: 15px;
+            margin-right: 15px;
+          }
+        }
+      }
+      .seccion-bottom {
+        display: inline-flex;
+        width: 100%;
+        justify-content: space-around;
+        p {
+          padding: 15px 5px;
+          font-size: 0.7rem;
+          color: #c3c3c3;
+        }
+      }
+    }
+    .background-ico {
+      background-color: $color-Primario;
+      width: 30%;
+      border-radius: 15px;
+    }
+    .seccion-location {
+      border-radius: 20px;
+      background-color: white;
+      min-height: 190px;
+      border: 1px dashed #e0e0e0;
+      width: 100%;
+      text-align: center;
+      background-image: url("../img/location.png");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      button {
+        margin-top: 20px;
+        background-color: #f6f5ff;
+        color: #8470ec;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-family: $font-titulo;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s linear 0.1s;
+        &:hover {
+          background-color: #8470ec;
+          color: #f6f5ff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  main {
+    .seccion-proximos-dias {
+      width: 100%;
+      .contenedor-clima-proximo .texto-clima-proximo {
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 40px;
+      }
+    }
+    .seccion-principal-banner .contenedor-banner .texto-contenido {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0;
+    }
+    .informacion-clima {
+      position: fixed;
+      left: 0;
+      top: -145px;
+      z-index: 1000;
+    }
+    .seccion-lugar-visitar {
+      width: 100%;
+      margin: 0;
+      h2 {
+        text-align: center;
+        margin-top: 40px;
+      }
+    }
+    .seccion-top-reviews {
+      width: 100%;
+      margin-top: 40px;
+      text-align: center;
+      display: block;
+    }
+    .seccion-otros-paises {
+      width: 100%;
+      transform: translateY(0);
+      margin: 20px 0;
+
+      .clima-otro-pais {
+        width: 100%;
+      }
+      .background-ico {
+        width: 15%;
+      }
+      .seccion-location {
+        background-position: center;
+      }
+    }
+  }
+}
